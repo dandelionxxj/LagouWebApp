@@ -1,0 +1,25 @@
+{
+  "name": "lagou",
+  "authors": [
+    "dandelion <1559558904@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2",
+    "angular-ui-router": "ui-router#^0.4.2",
+    "angular-cookies": "^1.6.2",
+    "angular-validation": "^1.4.3",
+    "angular-animate": "^1.6.2"
+  }
+}

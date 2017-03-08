@@ -1,0 +1,27 @@
+@import "../variable.less";
+@import "../property.less";
+.head{
+  background-color: @headBgColor;
+  .h(40);
+  .lh(40);
+  //padding:0 7px;
+  .pl(7);
+  .pr(7);
+  .text{
+    color: @defaultColor;
+  }
+  .custom{
+    background-color: @warnColor;
+    border-color:@warnColor;
+    color: @defaultColor;
+    border-style: dashed;
+    .mt(7);
+    .pl(15);
+    .pr(15);
+  }
+  .back-btn{
+    .fs(20);
+    width: 1rem;
+    left:0;
+  }
+}
