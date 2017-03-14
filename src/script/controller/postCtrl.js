@@ -1,6 +1,4 @@
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('postCtrl',['$state','$http','$scope',function($state,$http,$scope){
     $scope.tabList=[{

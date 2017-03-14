@@ -1,6 +1,4 @@
-/**
- * Created by asussl on 2017/3/4.
- */
+
 'use strict';
 angular.module('app').config(['$provide',function ($provide) {
     $provide.decorator('$http',['$delegate','$q',function ($delegate,$q) {

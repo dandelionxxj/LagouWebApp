@@ -14,7 +14,7 @@ angular.module('app').directive('appTab',[function(){
         link:function ($scope) {
             $scope.click=function (tab) {
                 $scope.selectId=tab.id;
-                $scope.tabClick(tab);//??
+                $scope.tabClick(tab);
             }
         }
     }

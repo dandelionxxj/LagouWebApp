@@ -29,12 +29,12 @@ gulp.task('json',function(){
     gulp.src(app.srcPath+'data/**/*.json')
         .pipe(gulp.dest(app.devPath+'data'))
         .pipe(gulp.dest(app.prdPath+'data'))
-    .pipe($.connect.reload())
+        .pipe($.connect.reload())
 });
 
 gulp.task('less',function () {
     gulp.src(app.srcPath+'style/**/*.less')
-        // .pipe($.plumber())
+        .pipe($.plumber())
         .pipe($.less()) //编译
         .pipe(gulp.dest(app.devPath+'css'))
         .pipe($.cssmin())

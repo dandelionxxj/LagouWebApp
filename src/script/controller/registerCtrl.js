@@ -1,6 +1,4 @@
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('registerCtrl',['$interval','$http','$scope',
     '$state', function($interval,$http,$scope,$state){

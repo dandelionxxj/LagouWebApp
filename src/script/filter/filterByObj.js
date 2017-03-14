@@ -1,6 +1,4 @@
-/**
- * Created by asussl on 2017/3/5.
- */
+
 'use strict';
 angular.module('app').filter('filterByObj',[function () {
     return function (list,obj) {

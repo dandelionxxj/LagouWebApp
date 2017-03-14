@@ -1,6 +1,4 @@
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('positionCtrl',['cache','$q','$http','$state','$scope','$log',function(cache,$q,$http,$state,$scope,$log){
     $scope.isLogin=!!cache.get('name');
