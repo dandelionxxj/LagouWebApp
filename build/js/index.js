@@ -1,10 +1,6 @@
-/**
- * Created by asussl on 2017/3/4.
- */
-angular.module('app',['ui.router','ngCookies','validation']);
-/**
- * Created by asussl on 2017/3/4.
- */
+
+angular.module('app',['ui.router','ngCookies','validation','ngAnimate']);
+
 'use strict';
 angular.module('app')
     .value('dict',{})
@@ -19,9 +15,7 @@ angular.module('app')
         dict.scale=resp.data;
     });
 }]);
-/**
- * Created by asussl on 2017/3/4.
- */
+
 'use strict';
 angular.module('app').config(['$provide',function ($provide) {
     $provide.decorator('$http',['$delegate','$q',function ($delegate,$q) {
@@ -46,9 +40,7 @@ angular.module('app').config(['$provide',function ($provide) {
         return $delegate;
     }])
 }]);
-/**
- * Created by asussl on 2017/3/4.
- */
+
 'use strict';
 angular.module('app').config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
     $stateProvider
@@ -91,9 +83,7 @@ angular.module('app').config(['$stateProvider','$urlRouterProvider',function($st
     });
     $urlRouterProvider.otherwise('main')
 }]);
-/**
- * Created by asussl on 2017/3/4.
- */
+
 'use strict';
 angular.module('app').config(['$validationProvider',
     function ($validationProvider) {
@@ -124,9 +114,7 @@ angular.module('app').config(['$validationProvider',
     $validationProvider.setExpression(expression).setDefaultMsg(defaultMsg);
 }]);
 
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('companyCtrl',['$http','$state','$scope',function($http,$state,$scope){
     $http.get('data/company.json?id='+$state.params.id)
@@ -135,9 +123,7 @@ angular.module('app').controller('companyCtrl',['$http','$state','$scope',functi
     })
 
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('favoriteCtrl',['$state','$http','$scope',
     function($state,$http,$scope){
@@ -146,9 +132,7 @@ angular.module('app').controller('favoriteCtrl',['$state','$http','$scope',
     })
 
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('loginCtrl',['cache','$state','$http','$scope',
     function(cache,$state,$http,$scope){
@@ -168,15 +152,13 @@ angular.module('app').controller('loginCtrl',['cache','$state','$http','$scope',
  */
 'use strict';
 angular.module('app').controller('mainCtrl',['$http','$scope',function($http,$scope){
-    //angular1.6没有success方法了，所以改用用then
+    //
     $http.get('/data/positionList.json')
         .then(function(res) {
             $scope.list = res.data;
         })
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('meCtrl',['cache','$state','$http','$scope',function(cache,$state,$http,$scope){
     if(cache.get('name')){
@@ -190,9 +172,7 @@ angular.module('app').controller('meCtrl',['cache','$state','$http','$scope',fun
         $state.go('main');
     };
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('positionCtrl',['cache','$q','$http','$state','$scope','$log',function(cache,$q,$http,$state,$scope,$log){
     $scope.isLogin=!!cache.get('name');
@@ -239,9 +219,7 @@ angular.module('app').controller('positionCtrl',['cache','$q','$http','$state','
         }
     }
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('postCtrl',['$state','$http','$scope',function($state,$http,$scope){
     $scope.tabList=[{
@@ -275,9 +253,7 @@ angular.module('app').controller('postCtrl',['$state','$http','$scope',function(
     }
 
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('registerCtrl',['$interval','$http','$scope',
     '$state', function($interval,$http,$scope,$state){
@@ -308,9 +284,7 @@ angular.module('app').controller('registerCtrl',['$interval','$http','$scope',
         })
     };
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').controller('searchCtrl',['dict','$http','$state','$scope',function(dict,$http,$state,$scope){
     $scope.name='';
@@ -369,9 +343,7 @@ angular.module('app').controller('searchCtrl',['dict','$http','$state','$scope',
     }
 
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').directive('appCompany',[function(){
     return {
@@ -383,9 +355,7 @@ angular.module('app').directive('appCompany',[function(){
         templateUrl:'view/template/company.html'
     };
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').directive('appFoot',[function(){
     return {
@@ -394,9 +364,7 @@ angular.module('app').directive('appFoot',[function(){
         templateUrl:'view/template/foot.html'
     }
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').directive('appHead',['cache',function(cache){
     return {
@@ -408,9 +376,7 @@ angular.module('app').directive('appHead',['cache',function(cache){
         }
     }
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').directive('appHeadBar',[function(){
     return {
@@ -427,9 +393,7 @@ angular.module('app').directive('appHeadBar',[function(){
         }
     }
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').directive('appPositionClass',[function(){
     return {
@@ -453,9 +417,7 @@ angular.module('app').directive('appPositionClass',[function(){
 
     };
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').directive('appPositionInfo',['$http',function($http){
     return {
@@ -486,9 +448,7 @@ angular.module('app').directive('appPositionInfo',['$http',function($http){
         }
     }
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').directive('appPositionList',['$http',function($http){
     return {
@@ -512,9 +472,7 @@ angular.module('app').directive('appPositionList',['$http',function($http){
         }
     }
 }]);
-/**
- * Created by asussl on 2017/3/2.
- */
+
 'use strict';
 angular.module('app').directive('appSheet',[function(){
     return {
@@ -544,14 +502,12 @@ angular.module('app').directive('appTab',[function(){
         link:function ($scope) {
             $scope.click=function (tab) {
                 $scope.selectId=tab.id;
-                $scope.tabClick(tab);//??
+                $scope.tabClick(tab);
             }
         }
     }
 }]);
-/**
- * Created by asussl on 2017/3/5.
- */
+
 'use strict';
 angular.module('app').filter('filterByObj',[function () {
     return function (list,obj) {
@@ -570,9 +526,7 @@ angular.module('app').filter('filterByObj',[function () {
         return result;
     }
 }]);
-/**
- * Created by asussl on 2017/3/5.
- */
+
 'use strict';
 angular.module('app')
     .service('cache',['$cookies',function ($cookies) {
